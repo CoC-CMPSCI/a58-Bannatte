@@ -9,7 +9,7 @@ int main()
     double score1, score2;
     string stuName;
     ofstream ofs; // defined class in fstream
-    ofs.open("student.txt")
+    ofs.open("students.txt")
 
     cout << "Enter the total number of students:";
     cin >> N;
