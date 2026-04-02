@@ -10,6 +10,10 @@ int main()
     string sname;
     ifstream ifs;
     ifs.open("students.txt");
+    if(!ifs.is_open()){
+        cerr << "Failed to open file." << endl;
+        return 1;
+    }
     ifs >> M;
     for (int i = 0; i < M; ++i) 
     {
