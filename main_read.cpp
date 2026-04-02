@@ -1,21 +1,23 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <string>
 using namespace std;
 int main()
 {
-    int num, score1, score2, total;
-    double avg;
+    int M;
+    double score1, score2, sum, avg;
     string sname;
     ifstream ifs;
     ifs.open("students.txt");
-
-    ifs >> num;
-    cout << fixed << setprecision(2);
-    for (int i = 0; i < num; ++i) {
+    ifs >> M;
+    for (int i = 0; i < M; ++i) 
+    {
         ifs >> sname >> score1 >> score2;
-        total = score1 + score2;
-        avg = total / 2.0;
-        cout << sname << " " << score1 << " " << 
+        sum = score1 + score2;
+        avg = sum / 2.0;
+        cout << sname << " " << score1 << " " << score2 << "\t" << sum << "\t" << avg << endl;
     }
+    ifs.close();
+    return 0;
 }
