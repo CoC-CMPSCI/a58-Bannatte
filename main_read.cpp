@@ -10,7 +10,7 @@ int main()
     string sname;
     ifstream ifs;
     ifs.open("students.txt");
-    if(!ifs.is_open()){
+    if(!ifs){
         cerr << "Failed to open file." << endl;
         return 1;
     }
