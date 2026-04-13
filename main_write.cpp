@@ -3,25 +3,25 @@
 using namespace std;
 
 int main() {
-    ofstream outFile("students.txt");
+    ofstream ofs("students.txt");
 
-    if (!outFile) {
-        cout << "Error opening file for writing." << endl;
-        exit(0);
+    if (!ofs) {
+        cout << "Failed to open file. " << endl;
+        return 1;
     }
 
     int N;
     cin >> N;
-    outFile << N << endl;
+    ofs << N << endl;
 
     string name;
     int score1, score2;
 
     for (int i = 0; i < N; i++) {
         cin >> name >> score1 >> score2;
-        outFile << name << " " << score1 << " " << score2 << endl;
+        ofs << name << " " << score1 << " " << score2 << endl;
     }
 
-    outFile.close();
+    ofs.close();
     return 0;
 }
