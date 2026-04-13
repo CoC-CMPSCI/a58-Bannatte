@@ -1,26 +1,27 @@
 #include <iostream>
-#include <fstream> // file stream
-#include <string>
+#include <fstream>
 using namespace std;
 
-int main()
-{
-    int N;
-    double score1, score2;
-    string stuName;
-    ofstream ofs; // defined class in fstream
-    ofs.open("students.txt")
+int main() {
+    ofstream outFile("students.txt");
 
-    cout << "Enter the total number of students:";
-    cin >> N;
-    ofs << N << endl;
-    
-    for (int i = 0; i < N; i++)
-    {
-        cout << "Enter the student name and two scores: ";
-        cin >> stuName >> score1 >> score2;
-        ofs << stuName << " " << score1 << " " << score2 << endl;
+    if (!outFile) {
+        cout << "Error opening file for writing." << endl;
+        exit(0);
     }
-    ofs.close();
+
+    int N;
+    cin >> N;
+    outFile << N << endl;
+
+    string name;
+    int score1, score2;
+
+    for (int i = 0; i < N; i++) {
+        cin >> name >> score1 >> score2;
+        outFile << name << " " << score1 << " " << score2 << endl;
+    }
+
+    outFile.close();
     return 0;
 }
